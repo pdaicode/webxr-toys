@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>WebXR ChatGPT</title>
+  <script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
+  <script src="src/components/vr-motion-gain.js"></script>
+  
+  <!-- Script to print head position to console -->
+  <script>
+    // Wait for A-Frame to be initialized
+    AFRAME.registerComponent('log-head-position', {
+      tick: function () {
+        // Get the camera entity
+        var camera = this.el
+
+        // Get the camera's position
+        var position = camera.getAttribute('position');
+
+        // Log the position to the console
+        //console.log('Head position:', position.x, position.y, position.z);
+      }
+    });
+  </script>
+</head>
+<body>
+  <a-scene vr-mode-ui="enabled: true">
+    <!-- Background: 360-degree image -->
+    <a-sky src="assets/realistic_snow_mountain.jpg"></a-sky>
+
+    <a-box color="red" position="0 1 -3"></a-box>
+    
+    <!-- Define the cameraRig entity with animation, animation="property: position; to: 0 1.6 10; dur: 5000;"-->
+    <a-entity id="cameraRig">
+      <a-camera
+        id="camera"
+        bind__wasd-controls="enabled: !inVr; touchEnabled: false"
+        position="0 1.6 0.5"
+        camera="far: 10000"
+        look-controls
+        player-height
+        wasd-controls="acceleration: 15"
+        vr-motion-gain="gain: 2"
+        log-head-position
+      ></a-camera>
+    </a-entity>
+    
+    <!-- Other entities and components within the scene... -->
+    
+  </a-scene>
+</body>
+</html>

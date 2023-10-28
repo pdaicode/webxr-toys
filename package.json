@@ -1,0 +1,30 @@
+{
+  "name": "webxr_chatgpt",
+  "version": "1.0.0",
+  "description": "webxr dev",
+  "main": "index.js",
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/xuetengcode/moonrider.git"
+  },
+  "keywords": [
+    "webxr"
+  ],
+  "author": "tx",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/xuetengcode/moonrider/issues"
+  },
+  "homepage": "https://github.com/xuetengcode/moonrider#readme",
+  "devDependencies": {
+    "http-server": "^14.1.1",
+    "mkcert": "^1.5.1"
+  },
+  "dependencies": {
+    "express": "^4.18.2",
+    "mime": "^3.0.0"
+  }
+}
